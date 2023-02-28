@@ -1,0 +1,112 @@
+Alex ONCEANU
+MP2I octobre 2022
+
+Bonjour !
+
+
+Pour les exercices 2 et 7, j'ai inclu dans le dossier de l'exercice un fichier
+"Makefile" déjà configuré pour compiler tous les fichiers .c, afin que ce soit
+moins pénible à compiler (car j'ai réparti le code en plein de fichiers pour
+ces deux exos).
+
+
+Exercice 3 :
+
+Question 2 :
+On aurait une variable "longueur" qui stocke la longueur maximale de la chaine
+en train d'etre lue. On lit le terminal caractere par caractere, tant qu'il
+reste de la place. Une fois que la "longueur" en question a été dépassée,
+on peut utiliser malloc pour allouer davantage de place. (Par exemple 
+sizeof(char) * longueur * 2); puis longueur *= 2;). Ainsi l'espace alloué
+double a chaque fois qu'il est dépassé, on est certains d'avoir assez de place.
+Une fois que la chaine est finie et qu'on ajoute le '\0', on peut peut-être
+free() l'espace non utilisé, en lançant free(str[longueur]) ..? pour ne pas
+allouer d'espace dont on ne se servira pas.
+
+Exercice 4 :
+
+Question 3:
+./afficheur > out.txt
+Question 5:
+./crieur < out.txt
+Question 6:
+./crieur < out.txt > out2.txt
+Question 7:
+./afficheur | ./crieur
+
+Exercice 5 :
+
+    Plutot qu'utiliser un algorithme classique de tri par ordre alphabetique,
+(où on trierait grâce à un tri fusion ou tri par tas les éléments en fonction
+de l'ordre alphabetique de leur premiere lettre, puis 2eme pour les égalités,
+etc..)
+
+    On peut plutôt se servir du programme élaboré dans la question 1, afin
+de placer tous les mots dans un arbre de recherche.
+
+On "decoupe" dico.txt en un fichier par lettre de l'alphabet comme
+dans la question 1.
+Puis pour chaque nouveau fichier "a.txt", "b.txt"... on peut le redécouper
+en fonction de la deuxième lettre de chaque mot avec le même algorithme.
+
+    Ainsi, dans le dossier "a1" (contenant tous les mots commençant par un a),
+on se retrouverait avec à nouveau au plus 26 "a2", "b2", "c2", ... et ce pour
+chaque lettre.
+On recommence jusqu'à avoir ordonné tous les mots du dico.
+
+    On a ainsi obtenu une structure arborescente, où chaque noeud correspond
+à une lettre, et son niveau (étage) dans l'arbre correspond à son emplacement
+dans un mot.
+Exemple :
+Tous les fils du noeud "a1" sont les mots commençant par un a.
+Tous les fils du noeud "j2", fils de "a1", sont les mots commençant par "aj"
+etc.
+
+    Si on les a ajoutés dans le bon ordre, on obtient un arbre de recherche.
+Ici les noeuds sont toujours par ordre alphabétique, de la gauche vers la
+droite. (a1, b1, c1, d1..., et dans a1 : a2, b2, c2, d2... dans l'ordre)
+
+    On peut maintenant faire un parcours infixe de l'arbre pour obtenir les
+noeuds dans le bon ordre, et les afficher (ou les remettre dans dico.txt
+par ordre alphabétique.)
+
+Exercice 6 :
+
+Question 4 :
+./carre < test_in/1.in
+
+Question 5 :
+si le resultat renvoyé par ./carre prenant en entrée le fichier test_in/1.in
+est égal au résultat renvoyé par cat (donc par l'affichage de) test_out/1.out,
+affiche Oui. Sinon Non.
+Donc ce script vérifie que le carré de 1.in vaut bien 1.out.
+
+Question 6 :
+Le carré de 2.in ne vaut pas 1.out (a moins d'avoir mis le meme nombre dans
+1.in et 2.in...) donc le script affiche Non.
+
+Question 8 :
+Yep, do_test.sh vérifie bien que pour chaque fichier .in, le résultat renvoyé
+par carré est égal au fichier .out correspondant, qui est le résultat attendu.
+
+Question 9 :
+Test 1 passé
+Test 2 passé
+Test 3 passé
+Test 4 passé
+Test 5 passé
+Erreur pour le test 6
+obtenu:
+29
+attendu:
+100
+(en effet, 10 au carré ne vaut pas 29.)
+
+Exercice 7:
+Question 6 :
+    Attention, le programme ne marchera qu'avec des fichiers dont les sauts de
+    ligne s'écrivent avec un simple \n, et pas \r\n comme sur windows.
+    Donc ce programme ne fonctionnera pas avec le fichier aventure.txt de
+    l'archive, (car il faudrait remplacer les fseek(,1,) par des fseek(,2,))
+    Mais j'ai inventé une petite histoire dans le fichier livre.txt, avec le
+    bon format. Bonne chance pour obtenir la fin "VICTOIRE !!!" :) .

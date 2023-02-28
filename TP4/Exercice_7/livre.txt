@@ -1,0 +1,81 @@
+16
+3
+En quete de nouveaux horizons, vous sortez de chez vous, bredouille mais determine. Vers ou aller ?
+Vers le nord
+3
+Vers le sud
+1
+Droit vers le soleil couchant, cowboy..
+2
+3
+La temperature augmente alors que vous avancez.. vous arrivez dans un desert. Que faites vous ?
+Continuer d'avancer, ne jamais abandonner !!
+5
+Revenir sur ses pas, cette aventure n'en vaut peut etre pas la peine...
+2
+Mon DM d'info voyons, le climat est plus propice a la concentration ici.
+6
+1
+Vous retournez dans le village.
+Changer de strategie vous aidera peut etre ?
+0
+3
+Vous arrivez dans la foret nordique, reputee pour ses loups sauvages dangereux. Que faites vous ?
+Couper du bois pour s'armer, au cas ou.
+4
+Continuer d'avancer, en accelerant legerement le pas.
+7
+Rebrousser chemin, c'est dangereux les loups quand meme.
+2
+2
+Vous frappez les arbres pour obtenir du bois. Vous reussissez a construire un etabli puis une epee en bois. Vous realisez tout a coup que la nuit commence a tomber. Que faire ?
+Chercher de la laine pour construire un lit.
+10
+S'enfoncer dans la foret.
+15
+3
+La chaleur devient insupportable... Bientot vous ne voyez plus du tout votre village de depart, plus que des dunes. Vous avez chaud.
+Oh, un oasis droit devant !
+11
+...continuer....d'avancer......
+12
+Se reperer avec le soleil pour rebrousser chemin.
+8
+3
+Vous sortez votre ordi, vous asseyez sur une petite dune et commencez a coder. Le sujet est interessant et vous avancez bien. Mais la chaleur extreme du desert se fait ressentir...
+Persister pour finir le DM.
+9
+Arreter et rentrer a la maison.
+8
+Oh, un oasis droit devant !
+11
+2
+Vous vous enfoncez dans la foret. Ahh, la douce odeur de la nature.. Une aventure pareille vous avait manque. Mais bientot la nuit se met a tomber. Vous aviez pense a laisser des miettes derriere vous a l'aller pour ne pas vous perdre. Rentrer ?
+Rentrons a la maison, ca suffit.
+13
+Ne pas abandonner, continuer d'avancer dans la foret.
+14
+1
+Vous essayez de vous reperer avec le soleil pour marcher vers le nord, mais la chaleur vous fait vous embrouiller les pinceaux...
+Vous perdez le nord. Ou etes vous ? Il fait si chaud..
+12
+0
+Malgre la chaleur extreme, vous continuez a coder, exercice apres exercice vous vous sentez plus fort, et bientot vous ne ressentez meme plus la chaleur. Alors que vous finissez le DM avec brio, vous realisez que votre puissance informatique vous fait leviter au dessus du sable. Vous vous teleportez alors chez vous, satisfait de votre nouveau pouvoir de dieu de l'informatique. VICTOIRE !!!
+0
+Vous trouvez un mouton dans une clairiere, vous l'abattez pour obtenir de la laine. Grace a votre etabli vous construisez une cabane et un lit, alors que des zombies commencent a vous poursuivre... Tout a coup votre maman vous appelle : "A TAAABLE". Vous mettez en veille votre ordi, vous avez assez joue a minecraft pour aujourd'hui. VICTOIRE..?
+1
+Vous courez vers l'oasis, mais il se fait de plus en plus distant.. Vous vous rappelez alors du cours de Mme Goutelard sur les mirages.
+Vous desesperez, vous avez si chaud..
+12
+0
+La chaleur vous accable, vous n'arrivez bientot plus a tenir debout. C'est alors que vous sentez un seau d'eau vous asperger la tete. Ce n'etait qu'un reve, et votre couette vous tenait trop chaud : votre maman vous a reveille. Vite, il est 7h50 ! VICTOIRE..?
+1
+Vous reussissez a vous reperer en suivant les miettes que vous aviez laissees. Mais alors que la nuit est tombee, vous entendez des bruits de pas et des hurlements. Des loups !! Courez !!! Vous sprintez comme jamais, pour finalement reussir a sortir de la foret. Les loups arretent de vous poursuivre a la sortie de la foret.
+pfiou, c'etait moins une !
+2
+0
+Vous commencez a courir et a vous enfoncer dans la foret. Vous avez peur.. et si des loups arrivaient ? Alors que vous tremblez de peur, seul au milieu de la foret froide, vous appercevez un chalet lumineux au loin. Vous y courez pour demander refuge. Vous etes accueillis par une gentille mamie et sa fille habillee en rouge. Elles vous rappellent quelqu'un... En tout cas elles vous proposent de passer la nuit, vous etes ici en securite (ou du moins vous en etes convaincus). Vous vous endormez dans un lit si doux, au chaud.. VICTOIRE..?
+1
+Vous avancez dans la foret, l'epee en main. Vous etes confiant, rien ne peut vous faire de mal si vous etes armes. Tout a coup vous vous retrouvez encercle par des loups ! Determine, vous hesitez a les combattre a l'epee. Mais il y a trop de loups, et vous n'etes pas un guerrier dans l'ame..
+Vous decidez de lancer votre epee. Tous les bons toutous courent pour aller la chercher. Vous en profitez pour filer en douce.
+13

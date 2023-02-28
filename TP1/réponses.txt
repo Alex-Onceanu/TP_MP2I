@@ -1,0 +1,39 @@
+Exercice 2:
+5) -a vient de all, affiche toutes les possibilités de dossiers dans lesquels on peut aller
+donc ça affiche en plus des autres dossiers "." et "..", dossier actuel et dossier parent.
+
+Exercice 4 :
+3) L'affichage est un peu laid, il n'y a pas de saut de ligne à la fin de la phrase.
+
+Exercice 5 :
+1) J'ai acheté 15 t-shirts à 6.99 euros
+2) Non, je suis surpris : J'ai acheté 15 t-shirts à 6.990000 euros
+
+Exercice 6 :
+1) première valeur de x: 5
+   deuxième valeur de x: 13
+2) Oui, le résultat est bien ce que j'avais prévu.
+
+Exercice 7 :
+5) somme_i vaut 3 et non 3.25, car c'est un entier.
+
+Exercice 8:
+1) Il demande à l'utilisateur deux nombres entiers, les affiche et affiche leur somme.
+2) "x vaut -19248816, y vaut 32767, la somme vaut -19216049"
+    Le programme essaye de lire une chaine de caractères comme étant un nombre entier.
+    Donc le programme bug et affiche n'importe quoi.
+
+Exercice 9:
+1) si..sinon..
+    Le programme demande à l'utilisateur deux nombres entiers x et y,
+    Puis il affiche "oui" si x est inférieur à y, "non" si y est supérieur ou égal à x.
+
+Exercice 12:
+1) Ce nombre de millisecondes est bien trop grand pour la taille maximum d'un int.
+2147483647 secondes (INT_MAX) est dépassé en environ 68 ans, donc en 2038.
+
+2) 9223372036854775808 (2**63) secondes sera dépassé en 292471208677 années et 195 jours donc en l'an 292471210647 le 13 juillet.
+
+Exercice 13:
+1) Le nombre est totalement différent et incompréhensible, aléatoire.
+2) C'est le même nombre ! (car avec la même seed)

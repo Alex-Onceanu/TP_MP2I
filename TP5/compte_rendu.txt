@@ -1,0 +1,61 @@
+Onceanu Alex MP2I
+30 novembre 2022
+
+Bonjour !
+
+
+Piles
+
+Q1 :
+le programme ne compile pas et affiche le message d'erreur
+"undefined reference to `pile_vide'"
+En effet, on a déclaré des fonctions sans les implémenter.
+Cela revient à dire au compilateur "Ces fonctions existent, cherche-les"
+alors qu'elles n'existent pas (du moins elles ne sont pas implémentées
+donc il n'y a pas de code à compiler/exécuter pour ces fonctions).
+
+Q<=7 :
+(selon Valgrind l'oracle) aucune des deux implémentations n'a de fuite mémoire.
+
+
+Q10 :
+A chaque itération on dépile P, or à chaque fois qu'on dépile P sa taille diminue,
+i.e |P| <- |P| - 1
+donc |P| diminue (str.) de 1 à chaque itération, et comme |P| est un entier > 0,
+c'est un variant de boucle (la boucle s'arrete quand |P| = 0).
+
+Q11:
+|P| ne décroit pas strictement à chaque itération, car il y a une chance sur 2 pour que
+le premier if se déclenche, auquel cas on incrémente |P| (en empilant sur P on augmente
+sa taille de 1.), donc il existe un cas d'itération où la nouvelle valeur |P'| devient
+supérieure à l'ancienne valeur de |P| i.e |P'| >= |P| (et i est incrémenté donc on passe
+à l'itération suivante).
+Donc |P| ne décroit pas strictement à chaque itération, ce n'est pas un VDB.
+
+Q12:
+Non plus, pour les mêmes raisons.
+N est décrémenté uniquement si le premier if se déclenche. Mais il y a 50% de chances pour
+que le sinon soit déclenché, auquel cas on a une itération où N ne décroit pas strictement
+(N <- N, N ne change pas) donc N décroit, mais pas strictement (car la suite (Ui) prenant
+la valeur de N à la i-ième itération stagne parfois, elle est décroissante mais pas strictement)
+Donc N ne décroît pas strictement à chaque itération, ce n'est pas un VDB.
+
+Q13:
+2*N + |P| est un variant de boucle pour la première boucle tant que.
+En effet, c'est un entier > 0 (car N et |P| le sont)
+
+Et à chaque itération on a 2 cas possibles :
+soit le premier if se déclenche, auquel cas on empile sur P et on décrémente N 
+Donc |P| <- |P| + 1, N <- N - 1
+=> 2 * N + |P| <- 2*(N-1) + |P| + 1 = 2*N + |P| - 1
+
+soit le sinon se déclenche, auquel cas on dépile P donc on décrémente |P|
+Donc |P| <- |P| - 1
+=> 2 * N + |P| <- 2*N + |P| - 1
+
+Ainsi dans les deux cas, à la fin de chaque passage de boucle le variant de boucle aura
+diminué de 1. Donc 2N+|P| est strictement décroissante, c'est un VDB.
+
+Q16 :
+on exécute les deux fichiers avec un pipe : "./generation | ./verification"
+Comme prévu, les mots générés sont effectivement bien-parenthésés.

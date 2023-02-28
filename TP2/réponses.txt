@@ -1,0 +1,90 @@
+Exercice 1 :
+Les conditions if(1) et if(-5.68) sont déclenchées mais pas if(0).
+Donc le programme affiche tout ce qui est mis sous une condition qui n'est pas 0.
+
+Exercice 2 :
+x      y      x && y      x || y
+0      0        0           0
+0      1        0           1
+1      0        0           1
+1      1        1           1
+
+Exercice 4 :
+1) Pour n = 5, le programme affiche 120 (qui est bien 5!)
+Pour n = -3, "segmentation fault" : le programme fait des appels
+récursifs encore et encore, c'est une boucle infinie (comme n < 0 et n-1 < n).
+Au bout d'un moment, la mémoire vive nécessaire pour
+tous ces appels récursifs est plus importante que celle disponible.
+Le programme commence à accéder à de la mémoire qui ne lui est pas réservée,
+donc l'OS interrompt le programme avec l'erreur "segmentation fault"
+
+2) "assertion n >= 0 failed"
+Le programme s'assure (assert) que n est positif ou nul :
+comme ce n'est pas le cas, le programme s'arrête avant même de commencer
+à faire des appels récursifs, c'est plus sécurisé.
+
+Exercice 8 :
+2) Utiliser la recherche dichotomique :
+On compare le nombre mystère au milieu de l'intervalle où il peut être
+Exemple de partie :
+>> 2500 (car (0+5000)/2 = 2500)
+plus bas !
+>> 1250
+plus haut !
+>> 1625 (car (1250+2500)/2 = 1625)
+plus bas !
+>> 1438
+plus haut !
+>> 1531
+etc etc...
+On fera dans le pire des cas log2(5000) = 13 essais pour trouver le nombre mystère.
+
+Exercice 11 :
+
+2) a) Pour x = 9, U6 = 34
+b) Pour x = 77, U128 = 4
+c) Pour x = 1023, U729 = 4
+d) Pour x = 1234567, U52397 = 2
+
+3) a) Le temps de vol de x = 1 est 1
+b) Le temps de vol de x = 26 est 11
+c) Le temps de vol de x = 27 est 112
+d) Le temps de vol de x = 28 est 19
+e) Le temps de vol de x = 77030 est 108
+f) Le temps de vol de x = 77031 est 351
+
+4) a) N = 10 : Le temps de vol pour x = 9 est de 19.
+b) N = 100 : Le temps de vol pour x = 97 est de 118.
+c) N = 1000 : Le temps de vol pour x = 871 est de 178.
+d) N = 10000 : Le temps de vol pour x = 6171 est de 261.
+e) N = 100000 : Le temps de vol pour x = 77031 est de 350.
+f) N = 1000000 : Le temps de vol pour x = 837799 est de 524.
+g) N = 10000000 : Le temps de vol pour x = 8400511 est de 685.
+
+5) Le temps pris par le programme pour la dernière
+valeur est de 15 secondes.
+Pour optimiser la fonction plus_long_vol, on peut utiliser la
+programmation dynamique (la mémoïsation plus précisément) :
+On peut retenir des valeurs clé du temps de vol  de Syracuse(x) pour
+chaque x déjà calculé.
+Comme ça on ne calcule jamais plusieurs fois la même chose.
+Et donc si par exemple en appelant Syracuse(837799) on tombe à un certain
+moment sur l'appel de Syracuse(77031), on sait qu'il faut ajouter 350 au
+temps de vol, puisqu'on a déjà calculé le temps de vol de Syracuse(77031)
+
+Pour implémenter cela, on peut imaginer un dictionnaire dynamique
+(ou un liste chaînée de couples (x, temps_de_vol(x)))
+qu'on completerait à chaque itération : s'il n'y a pas encore de
+temps de vol associé à x dans la liste, on associe celui qu'on est en
+train de calculer (récursivement c'est très facile à faire)
+Et donc au bout d'un moment on tomberait soit sur 1, soit sur une valeur
+de x ayant déjà un temps de vol associé, auquel cas on a trouvé la réponse
+(et la liste se complète progressivement en remontant dans l'arbre d'appels)
+
+Ainsi pour un N très grand, la liste serait bien garnie de couples, 
+et donc même avec un Syracuse(837799) on tomberait sur un x qu'on 
+a déjà calculé, assez rapidement (ce qui donne directement la réponse).
+La fonction serait bien plus efficace sur le long terme en terme de temps,
+mais moins en terme de mémoire utilisée (une liste aussi grande prendrait
+beaucoup de place..)
+

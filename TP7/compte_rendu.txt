@@ -1,0 +1,40 @@
+Question 6 :
+Dans le pire cas, tous les mots sont identiques de taille >= K.
+Et donc il y a que des collisions, c'est comme si on utilisait simplement
+une liste chainee.
+Comme pour chaque mot on fait une recherche dans D, et qu'une recherche
+serait O(n) dans ce pire cas, la complexite totale est de :
+O(1 + 2 + 3 + ... + n) = O(n(n+1)/2) = O(n**2).
+
+En moyenne, avec une bonne fonction de hachage qui evite les collisions,
+les mots sont bien repartis dans la table et les recherches sont O(1).
+Donc on fait n iterations avec une complexite constante chacune,
+La complexite totale moyenne est alors de O(n).
+
+Question 11 :
+Le mot le plus frequent de taille >= 8 est "capitaine", avec 750 occurences.
+
+Question 12 :
+m = 1000000 : 0.077s
+m = 10000 : 0.064s
+m = 100 : 0.249s
+m = 1 : 11.111s
+Le plus efficace est pour m = 0.064s, c'est un bon compromis memoire-temps.
+Si on va au-dela on utilise trop de memoire pour peu de performances
+supplementaires. Et au-dessous on perd en vitesse d'execution.
+
+Question 13 :
+m = 500 -> 28.816000
+m = 1024 -> 112.562500
+m = 1025 -> 14.056585
+m = 8191 -> 2.134519
+m = 8192 -> 40.931820
+
+On constate que quand m est une puissance de 2, il y a bien plus de collisions,
+et la fonction de hachage répartit moins bien les valeurs dans le tableau.
+On remarque que plus la 2-valuation de p est importante, plus il y a de
+collisions. (ce qui explique la moyenne de 112 elements par alvéole non-vide
+pour m = 1024.)
+Au contraire, Si m n'a que peu de diviseurs (comme 8191) les valeurs sont bien
+mieux réparties (et on arrive donc a une moyenne de 2 elts/alvéole).
+

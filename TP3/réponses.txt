@@ -1,0 +1,52 @@
+Exercice 1 :
+    Segmentation fault : on essaye de déréférencer un pointeur NULL,
+donc qui ne pointe vers rien. Le programme essaye tant bien que mal 
+d'accéder à l'emplacement mémoire 0x0000000000 mais l'emplacement
+n'étant pas alloué (car n'existe pas), le programme crashe.
+
+Exercice 2 :
+    Q1 :
+        Etape 1 : 5 8 5
+        Etape 2 : 8 5 8
+        Etape 3 : 8 6 6
+    Q2 :
+        Il affiche bien ce que j'avais prévu.
+    Q3 :
+        void echange(int* x, int* y)
+    //Inverse les valeurs des variables pointées par les pointeurs x et y
+
+Exercice 7 :
+    Q1 :
+        En écrivant un mot de plus de 20 lettres, le programme arrive à le lire :
+        Donc il continue de lire des caracteres en dehors du string buf,
+        qui n'a que 20 caracteres d'alloué. 
+        On pourrait exploiter ce comportement pour faire lire au programme un 
+    nombre démesuré de caractères, allant même jusqu'à dépasser la mémoire totale de l'ordi.
+    En tout cas c'est une "porte d'entrée / brèche" dans le programme, qu'on peut exploiter pour 
+    influencer ce que fait le programme, ce qui peut être dangereux, si le 
+    programme lui-même est une porte d'entrée vers une base de données confidentielle par exemple..
+
+    Q2 :
+        1) '?' = 63
+        2) '.' = 46
+        3) '\n' = 10
+
+    Q3 :
+        Il devrait afficher et affiche "SAULT", un mot fort étrange.
+    
+    Q4 :
+        Il affiche de façon assez agressive
+        BONJOUR
+        COUCOU BONJOUR
+
+        On peut conjecturer que str1 est stocké juste après str2 dans la mémoire,
+Ce qui explique pourquoi en affichant str2, str1 est affiché aussi juste après le ' '
+ajouté à la main.
+        On peut aussi conjecturer que le format %s sait par lui-même arrêter de
+lire de la mémoire qui n'est pas allouée ni ayant de lien avec le programme.
+Ainsi pour un scanf très long le %s accepte de tout lire, mais ici comme le
+programme n'a rien à voir avec ce qu'il y a juste après str1, il arrête de lire
+comme s'il y avait un \0. (et donc pour str2, %s continue de lire la suite
+puisqu'il "connait" str1 et affiche donc COUCOU BONJOUR.)
+
+    
