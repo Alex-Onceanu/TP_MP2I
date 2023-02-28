@@ -94,7 +94,7 @@ let a = N(4, N(3, N(1, V, V), V), N(3, V, N(1, V, V)));;
 
 let test() =
 	assert(est_symetrique a);
-	assert(liste_infixe a = [1;3;4;3;1]);
+	assert(liste_infixe a = [1; 3; 4; 3; 1]);
 	print_string "Fin des tests."
 ;;
 
