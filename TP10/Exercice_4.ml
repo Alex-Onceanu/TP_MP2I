@@ -66,11 +66,54 @@ let ajouter (s : string) (Node(arbb, arbl) : pre_tree) : pre_tree =
   in Node(arbb, aux s arbl)
 ;;
 
+let construire (a : pre_tree) : pre_tree =
+  let rec aux (a : pre_tree) (l : string list) : pre_tree =
+    match l with
+    | [] -> a
+    | h::t -> aux (ajouter h a) t
+  in aux a (String.split_on_char ' ' (read_line()))
+;;
+
+let enumerer (a : pre_tree) : string list =
+  List.sort (String.compare) (liste_tous_les_mots a)
+;;
+
+let enumerer_prefixe (s : string) (a : pre_tree) : string list =
+  List.filter (String.starts_with ~prefix:s) (enumerer a)
+;;
+
+let fusion (a : pre_tree) (b : pre_tree) : pre_tree =
+  let rec aux (a : pre_tree) (l : string list) : pre_tree =
+    match l with
+    | [] -> a
+    | h::t -> (if rechercher h a then aux a t
+               else aux (ajouter h a) t)
+  in aux a (enumerer b)
+;;
+
+let t2 = Node
+          (false,
+          [('b',
+            Node
+              (false,
+              [('o',
+                Node
+                  (false,
+                  [('r', Node (true, []));
+                    ('n', Node (false, [('d', Node (true, []))]))]));
+                ('m', Node (true, []))]));
+            ('t',
+            Node
+              (false,
+              [('r', Node (false, [('o', Node (true, []))]))]))])
+
 let test() =
   assert(taille t = 3);
   assert(plus_long t = 3);
   assert(rechercher "fo" t);
   assert(liste_tous_les_mots (ajouter "fils" t) = ["tro"; "t"; "fo"; "fils"]);
+  assert(enumerer_prefixe "t" t = ["t"; "tro"]);
+  assert(enumerer (fusion t t2) = ["bm"; "bond"; "bor"; "fo"; "t"; "tro"]);
 
   print_string "Fin des tests.";
 ;;
