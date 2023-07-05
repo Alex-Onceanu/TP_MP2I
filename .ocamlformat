@@ -1,3 +1,4 @@
 profile=conventional
 break-cases=fit-or-vertical
 let-binding-spacing=double-semicolon
+exp-grouping=preserve
